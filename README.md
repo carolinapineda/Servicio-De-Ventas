@@ -60,3 +60,46 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 
 ## MODELO RELACIONAL A LA BASE DE DATOS
 ![Modelo Relacional de la base de datos](/db_diagrams/ModeloRelacional-BD.png)
+
+## LOGICA DE NEGOCIO
+
+### proveedores
+- Crear un proveedor
+- Leer todos los proveedores
+- Leeer un proveedor por medio de su RUT
+- Eliminar un proveedor por medio de su RUT
+- Actualizar un proveedor por medio de su RUT
+
+### clientes
+- Crear un cliente
+- Leer todos los clientes
+- Leer un cliente por medio de su RUT
+- Eliminar un cliente por medio de su RUT
+- Actualizar un cliente por medio de su RUT
+
+### productos
+- Crear un producto 
+- Leer todos los productos
+- Leer un producto por medio de su id
+- Leer todos los productos por medio de su categoria
+- Eliminar un producto por medio de su id
+- Actualizar un producto por medio de su id
+- Cada que se realice una venta restarle al stock el numero de productos vendidos
+
+### ventas
+- Crear una venta
+- Leer todas las ventas
+- Leer una venta por medio de su id
+- Leer todas las ventas de un cliente
+- Actualizar una venta por medio de su id
+- Eliminar una venta por medio de su id
+- Al momento de tener el precio toatal de loa venta se le aplicara el descuento para tener el monto_final
+
+### categorias
+- Crear una categoria
+- Leer todas las categorias
+- Leer una categoria por su id
+- Actualizar una categoria
+- Eliminar una categoria
+
+ 
