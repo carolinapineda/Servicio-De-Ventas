@@ -4,24 +4,24 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 
 ## Entidades
 
-### proveedores
+### proveedores **(Entidad Datos)**
 - RUT **(PK): clave primaria.** 
 - nombre: **(nombre del proveedor)**
 - direccion_id **(FK): clave foranea que hace referencia a la entidad direcciones.**
-- telefono: **(número de teléfono del proveedor)**
+- telefono: **(UQ): numero de telefono del proveedor**
 - pagina_web: **(pagina web del proveedor)**
 
-### clientes
+### clientes **(Entidad Datos)**
 - RUT **(PK): clave primaria.**
 - nombre: **(nombre del cliente)**
 - direccion_id **(FK): clave foranea que hace referencia a la entidad direcciones.**
 
-### telefonos_clientes
+### telefonos_clientes **(Entidad Datos)**
 - id **(PK): clave primaria.**
 - telefono **(numero de telefono del cliente)**
 - cliente_id **(FK): clave foranea que hace referencia a la entidad clientes.**
 
-### direcciones
+### direcciones **(Entidad Datos)**
 - id **(PK): clave primaria**
 - calle **(nombre de la calle del domicilio)**
 - numero_ext **(numero externo del domicilio)**
@@ -29,7 +29,7 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 - ciudad **(ciudad del domicilio)**
 - cp **(codigo postal del domicilio)**
 
-### productos
+### productos **(Entidad Catalogo/Entidad Pivote)**
 - id **(PK): clave primaria**
 - nombre **(nombre del producto)**
 - precio_actual **(precio actual del producto)**
@@ -38,30 +38,31 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 - descripcion **(informacion sobre el producto)**
 - categoria_id **(FK): clave foranea hace referencia a la entidad categorias.**
 
-### categorias
+### categorias **(Entidad Catalogo)**
 - id **(PK): clave primaria**
 - nombre **(nombre de la categoria)**
 
-### ventas
+### ventas **(Entidad Datos/Entidad Pivote)**
 - id **(PK): clave primaria**
 - fecha **(fecha en que se realizo la venta)**
 - monto_final **(total de la compra)**
 - cliente_RUT **(FK): clave foranea hace referencia a la entidad clientes.**
 - detalles_ventas_id **(FK): clave foranea hace referencia a la entidad detalles_ventas.**
 
-### detalles_ventas
+### detalles_ventas **(Entidad Datos)**
 - id **(PK): clave primaria**
 - cantidad_vendida **(cantidad de los productos vendidos)**
 - producto_id **(FK): clave foranea hace referencia a la entidad productos.**
 
 
-## DIAGRAMA ENTIDAD RELACION
+## DIAGRAMAS
+# DIAGRAMA ENTIDAD RELACION
 ![Diagrama Entidad Relacion](/db_diagrams/Diagrama%20E-R.png)
 
-## MODELO RELACIONAL A LA BASE DE DATOS
+# MODELO RELACIONAL A LA BASE DE DATOS
 ![Modelo Relacional de la base de datos](/db_diagrams/ModeloRelacional-BD.png)
 
-## LOGICA DE NEGOCIO
+## REGLAS DE NEGOCIO
 
 ### proveedores
 - Crear un proveedor
