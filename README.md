@@ -60,7 +60,7 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 ![Diagrama Entidad Relacion](/db_diagrams/Diagrama%20E-R.png)
 
 # MODELO RELACIONAL A LA BASE DE DATOS
-![Modelo Relacional de la base de datos](/db_diagrams/ModeloRelacional-BD.png)
+![Modelo Relacional de la base de datos](/db_diagrams/ModeloRelacional-BD.drawio.png)
 
 ## REGLAS DE NEGOCIO
 
