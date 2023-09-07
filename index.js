@@ -3,6 +3,16 @@ import express from "express";
 import cors from "cors"
 import { sequelize } from './database/database.js';
 
+// Importamos los modelos a utilizar
+import './models/cliente.js';
+import './models/proveedor.js';
+import './models/direccion.js';
+import './models/telefono_cliente.js';
+import './models/producto.js';
+import './models/categoria.js';
+import './models/venta.js';
+import './models/detalle_venta.js';
+
 // Creacion de una inatancia de la aplicacion express
 const app = express();
 
@@ -24,7 +34,7 @@ app.use(cors(corsOption));
 async function main() {
     try {
         // Sincronizacion a la base de datos
-        await sequelize.sync({force: false})
+        await sequelize.sync({force: true})
         console.log('La conexion a la base de datos se a establecido correctamente');
 
         // Ocupar el puerto 
