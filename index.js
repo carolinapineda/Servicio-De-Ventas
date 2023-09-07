@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import express from "express";
 import cors from "cors"
+import { sequelize } from './database/database.js';
 
 // Creacion de una inatancia de la aplicacion express
 const app = express();
