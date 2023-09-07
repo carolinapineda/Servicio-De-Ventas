@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
+import { Proveedores } from "./proveedor.js";
 
 // Definir el modelo de la tabla Productos
 export const Productos = sequelize.define('productos', {
@@ -33,4 +34,12 @@ export const Productos = sequelize.define('productos', {
 },{
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: true
-})
+});
+
+Productos.belongsToMany(Proveedores, {
+    through: 'proveedor_RFC'
+});
+
+Proveedores.belongsToMany(Productos, {
+    through: 'proveedor_RFC'
+});

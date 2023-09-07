@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
+import { Direcciones } from "./direccion.js";
+import { Productos } from "./producto.js";
 
 // Definir el modelo de la tabla Proveedores
 export const Proveedores = sequelize.define('proveedores', {
@@ -23,6 +25,17 @@ export const Proveedores = sequelize.define('proveedores', {
         type: DataTypes.STRING,
     }
 },{
-     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
+    // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: false
 });
+
+Proveedores.belongsTo(Direcciones, {
+    foreignKey: 'direccion_id'
+});
+
+// Proveedores.belongsToMany(Productos, {
+//     through: 'proveedor_RFC'
+// });
+// Productos.belongsToMany(Proveedores, {
+//     through: 'proveedor_RFC'
+// });
