@@ -36,10 +36,10 @@ export const Productos = sequelize.define('productos', {
     timestamps: true
 });
 
-Productos.belongsToMany(Proveedores, {
-    through: 'proveedor_RFC'
-});
-
-Proveedores.belongsToMany(Productos, {
-    through: 'proveedor_RFC'
-});
+// Productos.belongsToMany(Proveedores, {
+//     through: 'proveedor_RFC'
+// });
+    
+// Proveedores.belongsToMany(Productos, {
+//     through: 'proveedor_RFC'
+// });

@@ -29,13 +29,11 @@ export const Proveedores = sequelize.define('proveedores', {
     timestamps: false
 });
 
-Proveedores.belongsTo(Direcciones, {
-    foreignKey: 'direccion_id'
-});
+// Proveedores.belongsTo(Direcciones, {
+//     foreignKey: 'direccion_id'
+// });
 
-// Proveedores.belongsToMany(Productos, {
-//     through: 'proveedor_RFC'
+// Direcciones.belongsTo(Proveedores, {
+//     foreignKey: 'direccion_id'
 // });
-// Productos.belongsToMany(Proveedores, {
-//     through: 'proveedor_RFC'
-// });
+

@@ -34,7 +34,7 @@ app.use(cors(corsOption));
 async function main() {
     try {
         // Sincronizacion a la base de datos
-        await sequelize.sync({force: true})
+        await sequelize.sync({force: false})
         console.log('La conexion a la base de datos se a establecido correctamente');
 
         // Ocupar el puerto 
