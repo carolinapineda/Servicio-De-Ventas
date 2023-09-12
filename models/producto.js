@@ -33,13 +33,6 @@ export const Productos = sequelize.define('productos', {
     }
 },{
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
-    timestamps: true
+    timestamps: false
 });
 
-// Productos.belongsToMany(Proveedores, {
-//     through: 'proveedor_RFC'
-// });
-    
-// Proveedores.belongsToMany(Productos, {
-//     through: 'proveedor_RFC'
-// });

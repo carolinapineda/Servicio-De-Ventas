@@ -8,14 +8,14 @@ Proveedores.belongsTo(Direcciones, {
     foreignKey: 'direccion_id'
 });
 
-Direcciones.belongsTo(Proveedores, {
-    foreignKey: 'direccion_id'
-});
+// // Direcciones.belongsTo(Proveedores, {
+// //     foreignKey: 'direccion_id'
+// // });
 
 // Relacion de mis modelos Productos a Proveedores N:N
-// Productos.belongsToMany(Proveedores, {
-//     through: 'proveedor_RFC'
-// });
+Productos.belongsTo(Proveedores, {
+    foreignKey: 'proveedor_RFC'
+});
     
 // Proveedores.belongsToMany(Productos, {
 //     through: 'proveedor_RFC'

@@ -29,11 +29,3 @@ export const Proveedores = sequelize.define('proveedores', {
     timestamps: false
 });
 
-// Proveedores.belongsTo(Direcciones, {
-//     foreignKey: 'direccion_id'
-// });
-
-// Direcciones.belongsTo(Proveedores, {
-//     foreignKey: 'direccion_id'
-// });
-
