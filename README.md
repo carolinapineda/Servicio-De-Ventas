@@ -59,7 +59,7 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 ### DIAGRAMA ENTIDAD RELACION
 ![Diagrama Entidad Relacion](/db_diagrams/Diagrama%20E-R.png)
 
-### MODELO RELACIONAL A LA BASE DE DATOS
+# MODELO RELACIONAL A LA BASE DE DATOS
 ![Modelo Relacional de la base de datos](/db_diagrams/ModeloRelacional-BD.drawio.png)
 
 ## REGLAS DE NEGOCIO
@@ -86,6 +86,7 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 - Eliminar un producto por medio de su id
 - Actualizar un producto por medio de su id
 - Cada que se realice una venta restarle al stock el numero de productos vendidos
+- Aplicarle el descuento a cada uno de los prodcutos.
 
 ### ventas
 - Crear una venta
@@ -94,8 +95,6 @@ El servicio de ventas utiliza Sequelize, una biblioteca de Node.js, para interac
 - Leer todas las ventas de un cliente
 - Actualizar una venta por medio de su id
 - Eliminar una venta por medio de su id
-- Al momento de tener el precio toatal de loa venta se le aplicara el descuento para tener el monto_final
-
 ### categorias
 - Crear una categoria
 - Leer todas las categorias
