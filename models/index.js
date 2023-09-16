@@ -4,26 +4,24 @@ import { Productos } from "./producto.js";
 import { Proveedores } from "./proveedor.js";
 
 // Relacion de mis modelos Proveedores a Direcciones 1:1
-Proveedores.belongsTo(Direcciones, {
-    foreignKey: 'direccion_id'
-});
+// Proveedores.belongsTo(Direcciones, {
+//     foreignKey: 'direccion_id'
+// });
 
-// // Direcciones.belongsTo(Proveedores, {
-// //     foreignKey: 'direccion_id'
-// // });
+// Direcciones.hasMany(Proveedores, {
+//     foreignKey: 'direccion_id'
+// });
 
 // Relacion de mis modelos Productos a Proveedores N:N
-Productos.belongsTo(Proveedores, {
-    foreignKey: 'proveedor_RFC'
-});
+Productos.belongsTo(Proveedores);
     
 // Proveedores.belongsToMany(Productos, {
 //     through: 'proveedor_RFC'
 // });
 
-Categorias.hasMany(Productos, {
-    foreignKey: 'categoria_id'
-});
+// Categorias.hasMany(Productos, {
+//     foreignKey: 'categoria_id'
+// }); 
 
 // Productos.hasMany(Categorias, {
 //     foreignKey: 'categoria_id'

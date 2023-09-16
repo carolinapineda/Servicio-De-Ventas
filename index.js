@@ -13,6 +13,9 @@ import './models/categoria.js';
 import './models/venta.js';
 import './models/detalle_venta.js';
 
+// Importamos las rutas a utilizar
+import productoRoutes from './routes/producto.js';
+
 // Creacion de una inatancia de la aplicacion express
 const app = express();
 
@@ -31,10 +34,13 @@ const corsOption = {
 // Utilizamos el cors
 app.use(cors(corsOption));
 
+// Utilizamos las rutas
+app.use(productoRoutes);
+
 async function main() {
     try {
         // Sincronizacion a la base de datos
-        await sequelize.sync({force: true})
+        await sequelize.sync({force: false})
         console.log('La conexion a la base de datos se a establecido correctamente');
 
         // Ocupar el puerto 
