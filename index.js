@@ -41,6 +41,9 @@ async function main() {
     try {
         // Sincronizacion a la base de datos
         await sequelize.sync({force: false})
+
+        // Comprobar la conexion a la base de datos 
+        await sequelize.authenticate();
         console.log('La conexion a la base de datos se a establecido correctamente');
 
         // Ocupar el puerto 
@@ -48,8 +51,7 @@ async function main() {
             console.log('El servicio esta corriendo en el puerto', port)
         });
 
-        // Comprobar la conexion a la base de datos 
-        await sequelize.authenticate();
+        
         
     } catch (error) {
         console.error('No se puede conectar a la base de datos:', error)

@@ -1,6 +1,5 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
-import { Direcciones } from "./direccion.js";
 import { Productos } from "./producto.js";
 
 // Definir el modelo de la tabla Proveedores
@@ -28,3 +27,9 @@ export const Proveedores = sequelize.define('proveedores', {
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: false
 });
+
+// Relacion de muchos a muchos
+Productos.belongsToMany(Proveedores,{
+    through:'union'
+});
+

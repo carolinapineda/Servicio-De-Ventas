@@ -2,7 +2,7 @@ import Sequelize  from 'sequelize';
 
 // Conexion a la base de datos
 export const sequelize = new Sequelize(
-    'SistemaVentas',  // Nombre de la bse de datos
+    'Ventas',  // Nombre de la bse de datos
     'postgres',  // Nombre del Usuario
     'postgres',  // Contraseña
     {

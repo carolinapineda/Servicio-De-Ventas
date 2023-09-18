@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
+import { Productos } from "./producto.js";
 
 // Definir modelo de la tabla Detalles ventas
 export const DetallesVentas = sequelize.define('detalles_ventas', {
@@ -17,4 +18,9 @@ export const DetallesVentas = sequelize.define('detalles_ventas', {
 }, {
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: false
+});
+
+// Relacion de muchos a muchos
+DetallesVentas.belongsToMany(Productos,{
+    through:'producto_union'
 });

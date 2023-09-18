@@ -1,5 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
+import { Clientes } from "./cliente.js";
+import { DetallesVentas } from "./detalle_venta.js";
 
 // Definir el modelo de la tabla Ventas 
 export const Ventas = sequelize.define('ventas', {
@@ -21,4 +23,14 @@ export const Ventas = sequelize.define('ventas', {
 },{
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: false
+});
+
+// Relacion de uno a muchos
+Clientes.hasMany(Ventas,{
+    foreignKey: 'cliente_RFC'
+});
+
+// Relacio de uno a uno 
+Ventas.belongsTo(DetallesVentas,{
+    foreignKey: 'detalle_venta_id'
 });

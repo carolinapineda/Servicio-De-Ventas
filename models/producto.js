@@ -1,7 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
-import { Proveedores } from "./proveedor.js";
-
+import { Categorias } from "./categoria.js";
 
 // Definir el modelo de la tabla Productos
 export const Productos = sequelize.define('productos', {
@@ -37,4 +36,8 @@ export const Productos = sequelize.define('productos', {
     timestamps: false
 });
 
+// Relacion de uno a muchos
+Categorias.hasMany(Productos,{
+    foreignKey: 'categoria_id'
+});
 

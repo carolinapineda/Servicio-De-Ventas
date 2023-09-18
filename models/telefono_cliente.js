@@ -17,4 +17,6 @@ export const TelefonosClientes = sequelize.define('telefonos_clientes', {
 },{
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: false
-})
+}); 
+
+

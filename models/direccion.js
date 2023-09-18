@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
+import { Proveedores } from "./proveedor.js";
 
 // Definir el modelo de la tabla Direcciones
 export const Direcciones = sequelize.define('direcciones',{
@@ -33,4 +34,9 @@ export const Direcciones = sequelize.define('direcciones',{
 }, {
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: false
+});
+
+// Relacion de uno a uno
+Direcciones.hasOne(Proveedores,{
+    foreignKey: 'direccion_id'
 });
