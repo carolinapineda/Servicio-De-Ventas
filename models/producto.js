@@ -37,5 +37,4 @@ export const Productos = sequelize.define('productos', {
     timestamps: false
 });
 
-// Productos.belongsTo(Proveedores);
 

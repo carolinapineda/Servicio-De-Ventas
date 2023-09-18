@@ -28,8 +28,3 @@ export const Proveedores = sequelize.define('proveedores', {
     // Deshabilita las marcas de tiempo predeterminadas 'createdAt' y 'updatedAt'
     timestamps: false
 });
-
-// Proveedores.belongsTo(Direcciones, {
-//     foreignKey: 'direccion_id'
-// });
-
