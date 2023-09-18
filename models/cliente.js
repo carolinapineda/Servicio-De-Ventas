@@ -7,7 +7,7 @@ import { TelefonosClientes } from './telefono_cliente.js';
 export const Clientes = sequelize.define('clientes', {
 
     // Columna "id" para un identificador unico
-    id: {
+    RFC: {
         type: DataTypes.STRING,
         primaryKey: true
     },
