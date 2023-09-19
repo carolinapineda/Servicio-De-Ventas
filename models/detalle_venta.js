@@ -22,5 +22,13 @@ export const DetallesVentas = sequelize.define('detalles_ventas', {
 
 // Relacion de muchos a muchos
 DetallesVentas.belongsToMany(Productos,{
-    through:'producto_union'
+    through:'detalleVenta_producto',
+    as: 'productos',
+    foreignKey: 'detalle_venta_id'
+});
+
+Productos.belongsToMany(DetallesVentas,{
+    through:'detalleVenta_producto',
+    as: 'detalles_ventas',
+    foreignKey: 'producto_id'
 });

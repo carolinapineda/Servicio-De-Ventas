@@ -6,18 +6,25 @@ module.exports = {
     return queryInterface.bulkInsert('clientes', [
       {
         RFC: 'QUMA470929F37',
-        nombre: 'Carlos Pineda',
-        direccioneId: 1
-      } 
+        nombre: 'Alfonso Quintero Montenegro',
+      },
+      {
+        RFC: 'PELJ800715',
+        nombre: 'Juan Pérez López'
+      },
+      {
+        RFC: 'ROGM951125',
+        nombre: 'María Rodríguez Gómez'
+      },
+      {
+        RFC: 'HELJ870210',
+        nombre: 'Carlos Hernández López'
+      },
+
     ])
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+    return queryInterface.bulkDelete('clientes', null, {});  
   }
 };

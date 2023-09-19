@@ -6,7 +6,7 @@ import { Productos } from "./producto.js";
 export const Proveedores = sequelize.define('proveedores', {
 
     // Columna "id" para un identificador unico
-    id:{
+    RFC:{
         type: DataTypes.STRING,
         primaryKey: true
     },
@@ -30,6 +30,14 @@ export const Proveedores = sequelize.define('proveedores', {
 
 // Relacion de muchos a muchos
 Productos.belongsToMany(Proveedores,{
-    through:'union'
+    through:'producto_proveedor',
+    as: 'proveedores',
+    foreignKey: 'producto_id'
+});
+
+Proveedores.belongsToMany(Productos,{
+    through:'producto_proveedor',
+    as: 'productos',
+    foreignKey: 'proveedor_RFC'
 });
 

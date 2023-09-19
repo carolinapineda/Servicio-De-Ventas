@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../database/database.js';
 import { Proveedores } from "./proveedor.js";
+import { Clientes } from "./cliente.js";
 
 // Definir el modelo de la tabla Direcciones
 export const Direcciones = sequelize.define('direcciones',{
@@ -40,3 +41,4 @@ export const Direcciones = sequelize.define('direcciones',{
 Direcciones.hasOne(Proveedores,{
     foreignKey: 'direccion_id'
 });
+

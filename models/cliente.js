@@ -22,8 +22,18 @@ export const Clientes = sequelize.define('clientes', {
 
 // Relacion de muchos a muchos 
 Direcciones.belongsToMany(Clientes,{
-    through:'union'
+    through:'direccion_cliente',
+    as: 'clientes',
+    foreignKey: 'direccion_id',
+    
 });
+
+// Relacion muchos a muchos
+// Clientes.belongsToMany(Direcciones,{
+//     through:'direccion_cliente',
+//     as: 'direcciones',
+//     foreignKey: 'cliente_RFC'
+// });
 
 // Relacion de uno a muchos
 Clientes.hasMany(TelefonosClientes,{
